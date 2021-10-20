@@ -2,7 +2,7 @@
 
 # Golang Interview Questions / Interviewer's Cheatsheet 
 
-Section 1 & 2 are intended to quickly evaluate the candidate, if it is worth wasting time talking to him/her more than 20 minutes. If yes - go to sections 3+.
+Section 1 and beginning of the section 2 (slices .. channels) are intended to quickly evaluate the candidate, if it is worth wasting time talking to him/her more than 20 minutes. If yes - go further and deeper.
 
 ## SECTION 1, SYSTEMS TRIVIA
 
@@ -33,17 +33,97 @@ Section 1 & 2 are intended to quickly evaluate the candidate, if it is worth was
     - what they are? how much memory they take? what if it needs more stack space?
     - how goroutines are mapped to threads of OS, and CPU of machine?
     - can you kill a goroutine from the outside? you _need_ that, how can you do that?
-    - 
+    - can you have goroutine's leak? well, is this possible? please describe how that might happen, and how will you find the cause?
+
+- channels (concurrency part 2)
+    - so you have a channel you need to read from, and some blocking IO function you use to read from e.g. network; please explain __how__ will you combine these two reads into a single loop, so that you won't block on a blocking function and miss the channel data?
+    - now, easy, what _are_ channels? two sorts of them?
+    - you write to an unbuffered channel, no one reads from, what will happen? okay, what is blocking?
+    - you have a channel, multiple goroutines are reading from it; you write a message into it, which goroutine will receive it, or all of them will?
+    - but what if you need to send a message to all of them?
+    - what if the number of reading (listening) goroutines is variable, how can you handle this case?
+    - what will happen if you read from closed channel?
+    - how can this be used? is there any standard golang library, that extensively uses it?
+    - what will happen if you write to closed channel?
+    - okay, how to make sure that doesn't happen? any methodologies? well, you can't be sure, how can you _absolutely_ make sure there won't be panic on writing to a channel?
+    - range over a channel
+    - you have a channel, and wanna try to send to it, only if it can receive your data, you can't afford to block - how will you do it? will it work with unbuffered channels?
+    - you can afford to wait for channel, but not too long, say 5 seconds at most; you do you implement this timeout?
+    - you have IO function that blocks, and you can't afford that; how will you implement a timeout wrapper over it?
+    - can you find out if channel is full?
+    - if it is empty? okay, we have a channel for communicating data, and we want to drain it before exiting, what is the proper way to do it?
+    - why "Uber best practices" recommends set capacity 1 to all buffered channels, or else think well about the specific digit, why is that?
+    - can you resize the buffer of a channel?
+    - well, you absolutely need it, how will you do it?
+    - what kinds of data can you send via a channel? can you send a channel itself? an empty struct?
+    - how can you implement an RPC over channels in Go? i.e. how do you communicate with N goroutines, and get synchronous replies?
+    - (probably the most tricky question) How can you implement prioritization in a set of channels? (if the candidate can explain it  - you are lucky to find a star)
+
+- synchronization (concurrency part 3)
+    - what are waitgroups?
+    - mutexes
+    - contexts
+          - types of contexts?
+          - what are the use of tham?
+          - suppose there are no contexts, how would you implement it yourself?
+          - how would you stop net/http server?
+    - semaphores vs mutexes
+    - mutexes vs communication, CSP, what Go docs says about it?
+    - what are deadlock?
+    - can you have a deadlock in Go? provide an example
+    - strategies to avoid deadlocks?
+    - what are race conditions?
+    - can you have race conditions in Go? example please
+
+- GC! and MM, here we are
+    - what is GC and how does it operate?
+    - can you stop it? can you force it?
+    - can you write a program so that GC doesn't work that much? how?
+    - what algorithms are used?
+    - stack vs heap
+    - are variables allocated on the stack, or on the heap, how it is decided? escape analysis?
+    - how to monitor the GC cycles and memory consumption?
+    - so you have a memory leak - how would you debug it?
+
+- Maps
+
+- OOP
+
 - errors
-- 
 
-## SECTION 3, GOLANG COMPLETE
+## SECTION 3, DATA FORMATS
 
-- escape analysis
+- JSON
+- gob
+- XML
+- yaml
+- other
 
 ## SECTION 4, DATABASES
 
+- Basics
+    - Relational?
+    - non-relational?
+    - difference? can implement anything in one class or the another?
+
 ## SECTION 5, NETWORKING & COMMUNICATION
+
+- IP addresses, masks, DNS
+- You enter google.com in a browser and hit enter - what happens next, explain in 3 minutes
+- HTTP
+    - How the request looks like?
+- TCP
+- TLS
+- UDP
+- vs. vs. vs.
+- Ports, sockets, difference
+- What is RPC?
+- What is REST?
+    - How REST is different from RPC?
+    - Can REST be implemented not over HTTP? example please
+    - Can you cache REST? RPC?
+    - Load balancing, RPC vs. REST?
+
 
 ## SECTION 6, MESSAGE QUEUES
 
