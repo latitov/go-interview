@@ -63,10 +63,10 @@ Section 1 and beginning of the section 2 (slices .. channels) are intended to qu
     - what are waitgroups?
     - mutexes
     - contexts
-          - types of contexts?
-          - what are the use of tham?
-          - suppose there are no contexts, how would you implement it yourself?
-          - how would you stop net/http server?
+        - types of contexts?
+        - what are the use of tham?
+        - suppose there are no contexts, how would you implement it yourself?
+        - how would you stop net/http server?
     - semaphores vs mutexes
     - mutexes vs communication, CSP, what Go docs says about it?
     - what are deadlock?
