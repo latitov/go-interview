@@ -38,6 +38,7 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
 
 - __concurrency__ (this is another question the candidate must clearly understand; a lot of them learned that concurrency!=parallelism, but make sure he/she _really_ understands what it is)
     - goroutines; threads - how many of them created by default?
+    - Is there a limit for a number of goroutines?
     - what they are? how much memory they take? what if it needs more stack space?
     - how goroutines are mapped to threads of OS, and CPU of machine?
     - can you kill a goroutine from the outside? you _need_ that, how can you do that?
