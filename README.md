@@ -4,7 +4,7 @@
 
 First question intended to quickly evaluate the candidate, if it is worth wasting time talking to him/her more than 20 minutes. If yes - go further and deeper.
 
-## SECTION 1, SYSTEMS TRIVIA
+## SECTION 1, SYSTEMS MINIMUM
 
 - What is stack? Heap? __What is recursion?__
 - How can you affect if structure will be put on stack or heap?
@@ -14,10 +14,19 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
 - how OS manages memory; pages;
 - OS kernel, syscalls, cgroups, systemd; systemd vs docker;
 - how to kill a process by name? how to find open ports? configuring sshd keys? how to see system logs? systemd logs?
+- Deadlocks?
+- Race conditions?
+- Idempotency?
 
   some questions can be by-passed, but at least what are processes and threads, the candidate absolutely must know.
 
-## SECTION 2, GOLANG TRIVIA
+## SECTION 2, GOLANG MINIMUM
+
+- Switch syntax, vs. other languages?
+
+- Type system
+  - type switch
+  - reflection
 
 - __slices___ (this is question #1, as 90% of weak candidates are detected at this very simple stage; so please start with it, and if it doesn't know slices, you can finish the interview)
     - what _are_ slices?
@@ -74,7 +83,7 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
     - mutexes
     - contexts
         - types of contexts?
-        - what are the use of tham?
+        - what are the use of them?
         - suppose there are no contexts, how would you implement it yourself?
         - how would you stop net/http server?
     - semaphores vs mutexes
@@ -117,6 +126,8 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
     - Relational?
     - non-relational?
     - difference? can implement anything in one class or the another?
+- Redis, Postgres, MongoDB, et al:
+  - what libs did you use?
 
 ## SECTION 5, NETWORKING & COMMUNICATION
 
@@ -139,9 +150,34 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
 
 ## SECTION 6, MESSAGE QUEUES
 
+- Patterns:
+  - Multicast / fanout, vs. job distribution?
+- Kafka
+  - Partitions
+  - Offset
+  - Persistence
+  - Consumer groups
+  - Most common libs
+- AMQP / RabbitMQ
+- NATS
+- NATS Streaming / JetStream
+- General:
+  - push vs pull?
+  - at least once, at most once, exactly once?
+  - persistency
+  - idempotency
+
 ## SECTION 7, INFRASTRUCTURE
+
+- Docker
+  - Layers?
+  - Containers?
+- Kubernetes (alternatives)?
 
 ## SECTION 8, ALGORITHMS
 
-
+- Trees
+  - B-tree
+  - Trie, prefix tree
+  - 
 
