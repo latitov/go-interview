@@ -29,7 +29,7 @@ Section 1 and beginning of the section 2 (slices .. channels) are intended to qu
     - can you take a pointer to a slice element? why?
 
 - __concurrency__ (this is another question the candidate must clearly understand; a lot of them learned that concurrency!=parallelism, but make sure he/she _really_ understands what it is)
-    - goroutines  - how many of them created by default?
+    - goroutines; threads - how many of them created by default?
     - what they are? how much memory they take? what if it needs more stack space?
     - how goroutines are mapped to threads of OS, and CPU of machine?
     - can you kill a goroutine from the outside? you _need_ that, how can you do that?
