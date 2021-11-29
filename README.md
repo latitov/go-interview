@@ -2,6 +2,8 @@
 
 # Golang Interview Questions / Interviewer's Cheatsheet 
 
+_WORK IN PROGRESS_
+
 First question intended to quickly evaluate the candidate, if it is worth wasting time talking to him/her more than 20 minutes. If yes - go further and deeper.
 
 ## SECTION 1, SYSTEMS MINIMUM
