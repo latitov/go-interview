@@ -34,6 +34,7 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
 - Strings in Go
     - immutability
     - runes
+    - how to iterate by runes?
     - overhead
 
 - __concurrency__ (this is another question the candidate must clearly understand; a lot of them learned that concurrency!=parallelism, but make sure he/she _really_ understands what it is)
@@ -139,4 +140,8 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
 ## SECTION 6, MESSAGE QUEUES
 
 ## SECTION 7, INFRASTRUCTURE
+
+## SECTION 8, ALGORITHMS
+
+
 
