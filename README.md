@@ -2,10 +2,13 @@
 
 # Golang Interview Questions / Interviewer's Cheatsheet 
 
-Section 1 and beginning of the section 2 (slices .. channels) are intended to quickly evaluate the candidate, if it is worth wasting time talking to him/her more than 20 minutes. If yes - go further and deeper.
+First question intended to quickly evaluate the candidate, if it is worth wasting time talking to him/her more than 20 minutes. If yes - go further and deeper.
 
 ## SECTION 1, SYSTEMS TRIVIA
 
+- What is stack? Heap? __What is recursion?__
+- How can you affect if structure will be put on stack or heap?
+- What is data structure? What is variable? What is register? What is pointer?
 - OS process, thread; vs. goroutine; what about memory?
 - containers, VMs, containers vs VMs;
 - how OS manages memory; pages;
@@ -27,6 +30,11 @@ Section 1 and beginning of the section 2 (slices .. channels) are intended to qu
     - you pass a slice into a function, append an element, and return it back; will the returned slice point to the same underlying array?
     - (gotcha question: you have a slice s1 with 50 elements, and take s2=[30:40], then unmarshal a JSON array into s2; can you expect that s1 will have elements 30..40 updated, or not, or what will/can happen?)
     - can you take a pointer to a slice element? why?
+
+- Strings in Go
+    - immutability
+    - runes
+    - overhead
 
 - __concurrency__ (this is another question the candidate must clearly understand; a lot of them learned that concurrency!=parallelism, but make sure he/she _really_ understands what it is)
     - goroutines; threads - how many of them created by default?
@@ -86,6 +94,8 @@ Section 1 and beginning of the section 2 (slices .. channels) are intended to qu
     - so you have a memory leak - how would you debug it?
 
 - Maps
+  - vs. hash set
+  - What is a hash?
 
 - OOP
 
