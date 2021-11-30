@@ -8,7 +8,7 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
 
 ## SECTION 1, SYSTEMS MINIMUM
 
-- What is stack? Heap? __What is recursion?__
+- What is stack? Heap? __What is recursion?__ (yeah, sorry about that question :()
 - How can you affect if structure will be put on stack or heap?
 - What is data structure? What is variable? What is register? What is pointer?
 - OS process, thread; vs. goroutine; what about memory?
