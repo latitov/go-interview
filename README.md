@@ -68,6 +68,7 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
     - what will happen if you write to closed channel?
     - okay, how to make sure that doesn't happen? any methodologies? well, you can't be sure, how can you _absolutely_ make sure there won't be panic on writing to a channel?
     - range over a channel
+    - you wrote some data to a buffered channel, then closed it; can you read those values back?
     - you have a channel, and wanna try to send to it, only if it can receive your data, you can't afford to block - how will you do it? will it work with unbuffered channels?
     - you can afford to wait for channel, but not too long, say 5 seconds at most; you do you implement this timeout?
     - you have IO function that blocks, and you can't afford that; how will you implement a timeout wrapper over it?
@@ -96,7 +97,7 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
     - what are race conditions?
     - can you have race conditions in Go? example please
 
-- GC! and MM, here we are
+- GC and MM
     - what is GC and how does it operate?
     - can you stop it? can you force it?
     - can you write a program so that GC doesn't work that much? how?
@@ -105,12 +106,16 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
     - are variables allocated on the stack, or on the heap, how it is decided? escape analysis?
     - how to monitor the GC cycles and memory consumption?
     - so you have a memory leak - how would you debug it?
+    - Escape analysis?
 
 - Maps
   - vs. hash set
   - What is a hash?
 
 - OOP
+  - embedding
+  - interfaces
+  - "exported" vs "not exported"
 
 - errors
 
@@ -128,6 +133,9 @@ First question intended to quickly evaluate the candidate, if it is worth wastin
     - Relational?
     - non-relational?
     - difference? can implement anything in one class or the another?
+    - Isolation levels
+    - 2PC
+    - Consistency; Eventual consistency
 - Redis, Postgres, MongoDB, et al:
   - what libs did you use?
 
